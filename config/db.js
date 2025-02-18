@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 let cached = global.mongoose;
 
 if (!cached) {
@@ -12,14 +13,11 @@ async function connectDB() {
   }
 
   if (!cached.promise) {
-    return (opts = {
-      bufferCommand: false,
-    });
+    const opts = { bufferCommands: false }; 
+
     cached.promise = mongoose
       .connect(`${process.env.MONGODB_URI}/quickcart`, opts)
-      .then((mongoose) => {
-        return mongoose;
-      });
+      .then((mongoose) => mongoose);
   }
 
   cached.conn = await cached.promise;
