@@ -41,7 +41,6 @@ const MyOrders = () => {
         if (user) {
             fetchOrders();  
         }
-        
     }, [user]);
 
     return (
