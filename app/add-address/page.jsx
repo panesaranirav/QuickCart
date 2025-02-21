@@ -37,7 +37,7 @@ const AddAddress = () => {
             }
 
         } catch (error) {
-            toast.error(erroe.message)
+            toast.error(error.message)
         }
     }
 
